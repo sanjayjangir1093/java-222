@@ -1,20 +1,20 @@
 pipeline {
 	agent any
 	stages {
-		stage (pull code from git repo){
+		stage ("pull code from git repo"){
 			steps{
-				git branch: 'main', url: 'https://github.com/gouravaas/app-java.git'
+				git branch: 'main', url: 'https://github.com/sanjayjangir1093/java-222.git'
 			}
 		}
-		stage (Build the code){
+		stage ("Build the code"){
 			steps{
 				sh 'sudo mvn dependency:purge-local-repository'
                                 sh 'sudo mvn clean package'
 			}
 		}
-		stage (Building docker image){
+		stage ("Building docker image"){
 			steps{
-				sh 'docker build -t app-java:$BUILD_TAG .'
+				sh 'sudo docker build -t jo:$BUILD_TAG .'
 			}
 		}
 	}
