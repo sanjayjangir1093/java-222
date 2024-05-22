@@ -16,8 +16,7 @@ pipeline {
 		stage ("Building docker image"){
 			steps{
 				sh 'sudo docker build -t jo:$BUILD_TAG .'
-				sh 'sudo docker tag app-jva:$BUILD_TAG sanjayjangir979922 /app-java:$BUILD_TAG '
-
+				sh 'sudo docker tag app-jva:$BUILD_TAG sanjayjangir/app-java-11:$BUILD_TAG
 	         	}
          	}
        }
