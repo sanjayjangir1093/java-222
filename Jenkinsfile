@@ -12,13 +12,6 @@ pipeline {
                 sh 'mkdir build'
             }
         }
-     
-        stage('Deploy') {
-            steps {
-                echo 'Deploying...'
-                sh 'scp build/* deploy@remote-server:/opt/deploy/'
-            }
-        }
         stage('Cleanup') {
             steps {
                 echo 'Cleaning up...'
