@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'sanjay'
+        label 'jenki'
     }
     environment {
         MY_VAR = 'Hello, World!'
