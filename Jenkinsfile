@@ -10,7 +10,6 @@ pipeline {
             steps {
                 echo 'Building...'
                 sh 'mkdir build'
-                sh 'cp src/* build/'
             }
         }
         stage('Test') {
