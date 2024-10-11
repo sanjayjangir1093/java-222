@@ -16,7 +16,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-                sh 'ssh deploy@remote-server "mkdir -p /opt/deploy"'
+                sh 'ssh deploy@3.110.165.114 "mkdir -p /opt/deploy"'
                 sh 'scp build/* deploy@remote-server:/opt/deploy/'
             }
         }
