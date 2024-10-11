@@ -12,11 +12,11 @@ pipeline {
                 sh 'mkdir build'
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing...'
-                sh 'java -jar test.jar'
-            }
+       stage('Test') {
+          steps {
+              echo 'Testing...'
+              sh 'java -jar path/to/test.jar'
+           }
         }
         stage('Deploy') {
             steps {
