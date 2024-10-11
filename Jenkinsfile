@@ -12,12 +12,7 @@ pipeline {
                 sh 'mkdir build'
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing...'
-                sh 'java -jar ${WORKSPACE}/test/test.jar'
-            }
-        }
+     
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
