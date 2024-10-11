@@ -15,10 +15,8 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing...'
-                sh 'pwd'
-                sh 'ls -l'
-                sh 'java -jar path/to/test.jar'
-             }
+                sh 'java -jar ${WORKSPACE}/test/test.jar'
+            }
         }
         stage('Deploy') {
             steps {
