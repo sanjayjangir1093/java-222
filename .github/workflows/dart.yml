@@ -15,13 +15,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-     - name: Clone repository
-       uses: actions/checkout@v4
-     - name: Set up Flutter
-       uses: subosito/flutter-action@v2
-       with:
-         flutter-version: 3.24.0
-     - run: flutter pub get
-     - run: flutter test
-     - run: flutter build apk
-     - run: flutter build appbundle
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.24.0
+
+      - run: |
+          cd ${{ github.workspace }}  # Ensure we are in the correct directory
+          flutter pub get
+        name: Install Flutter dependencies
+
+      - run: flutter test
+        name: Run Flutter tests
+
+      - run: flutter build apk --release
+        name: Build APK
+
+      - run: flutter build appbundle
+        name: Build App Bundle
